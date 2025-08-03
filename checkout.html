@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน | ME SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* โค้ด CSS สำหรับหน้าชำระเงิน */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #1a1a1a;
+            --text-color: #fff;
+            --card-bg: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .checkout-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .checkout-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .order-summary, .payment-form {
+            margin-bottom: 40px;
+        }
+
+        .order-summary h2, .payment-form h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .summary-total {
+            font-size: 1.5em;
+            font-weight: 700;
+            padding-top: 15px;
+            text-align: right;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .confirm-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff0000, #ff4d4d);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ME SHOP</div>
+        <div class="nav-links">
+            <a href="home.html">หน้าหลัก</a>
+            <a href="products.html">สินค้า</a>
+            <a href="cart.html">ตะกร้าสินค้า</a>
+            <a href="account.html">โปรไฟล์</a>
+            <a href="login.html">ออกจากระบบ</a>
+        </div>
+    </nav>
+
+    <main class="checkout-container">
+        <h1>ดำเนินการชำระเงิน</h1>
+        
+        <div class="order-summary">
+            <h2>สรุปรายการสั่งซื้อ</h2>
+            <div class="summary-item">
+                <span>Robux 800</span>
+                <span>250 บาท</span>
+            </div>
+            <div class="summary-item">
+                <span>ไอเท็มพิเศษ</span>
+                <span>150 บาท</span>
+            </div>
+            <div class="summary-total">
+                <span>ยอดรวม: 400 บาท</span>
+            </div>
+        </div>
+
+        <div class="payment-form">
+            <h2>ข้อมูลการชำระเงิน</h2>
+            <form action="#">
+                <div class="input-group">
+                    <label for="name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="payment-method">ช่องทางการชำระเงิน</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="">-- เลือกช่องทาง --</option>
+                        <option value="promptpay">PromptPay</option>
+                        <option value="credit-card">บัตรเครดิต</option>
+                        <option value="bank-transfer">โอนเงินธนาคาร</option>
+                    </select>
+                </div>
+                <button type="submit" class="confirm-btn">ยืนยันการชำระเงิน</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ME SHOP. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

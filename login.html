@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | ME SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* โค้ด CSS ที่เพิ่มแอนิเมชันและเอฟเฟกต์ */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Kanit', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            overflow: hidden; /* ป้องกันการเกิด scroll bar จากแอนิเมชัน */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-container {
+            width: 400px;
+            background: rgba(0, 0, 0, 0.85); /* เพิ่มความเข้มเล็กน้อย */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4); /* เงาเรืองแสงสีแดง */
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: formFadeIn 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes formFadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #ff0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            margin-bottom: 5px;
+            line-height: 1;
+            animation: pulsate 2s infinite ease-in-out;
+        }
+
+        .logo span {
+            font-size: 1.2em;
+            color: #fff;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulsate {
+            0% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); }
+            50% { text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 255, 255, 0.5); }
+            100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); }
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab-buttons button {
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-buttons button.active {
+            color: #ff0000;
+            border-bottom: 2px solid #ff0000;
+            font-weight: 700;
+        }
+
+        .form-content {
+            display: none;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .form-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: 400;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #ff0000;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff0000, #ff4d4d);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="background-image: url('https://i.postimg.cc/4NzhWKgG/20250802-124836.jpg');">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 class="logo">เอ็มอี<br><span>ME SHOP</span></h1>
+                <div class="tab-buttons">
+                    <button id="login-tab" class="active">เข้าสู่ระบบ</button>
+                    <button id="register-tab">สมัครสมาชิก</button>
+                </div>
+            </div>
+
+            <div id="login-form" class="form-content active">
+                <form action="#">
+                    <div class="input-group">
+                        <label for="login-username">ชื่อผู้ใช้</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">รหัสผ่าน</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
+                </form>
+            </div>
+
+            <div id="register-form" class="form-content">
+                <form action="home.html">
+                    <div class="input-group">
+                        <label for="reg-username">ชื่อผู้ใช้</label>
+                        <input type="text" id="reg-username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-email">อีเมล</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-password">รหัสผ่าน</label>
+                        <input type="password" id="reg-password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // โค้ด JavaScript สำหรับการสลับฟอร์ม
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginTab = document.getElementById('login-tab');
+            const registerTab = document.getElementById('register-tab');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+
+            loginTab.addEventListener('click', () => {
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+            });
+
+            registerTab.addEventListener('click', () => {
+                registerTab.classList.add('active');
+                loginTab.classList.remove('active');
+                registerForm.classList.add('active');
+                loginForm.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

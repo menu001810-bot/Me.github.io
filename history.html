@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการซื้อ | ME SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* โค้ด CSS สำหรับหน้าประวัติการซื้อ */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #1a1a1a;
+            --text-color: #fff;
+            --card-bg: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .history-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .history-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .order-table th, .order-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .order-table th {
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+
+        .order-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        
+        .status-complete {
+            background-color: #008000; /* เขียว */
+        }
+        
+        .status-pending {
+            background-color: #ffc107; /* เหลือง */
+            color: #1a1a1a;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ME SHOP</div>
+        <div class="nav-links">
+            <a href="home.html">หน้าหลัก</a>
+            <a href="products.html">สินค้า</a>
+            <a href="cart.html">ตะกร้าสินค้า</a>
+            <a href="account.html">โปรไฟล์</a>
+            <a href="history.html">ประวัติการซื้อ</a>
+            <a href="login.html">ออกจากระบบ</a>
+        </div>
+    </nav>
+
+    <main class="history-container">
+        <h1>ประวัติการซื้อ</h1>
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>วันที่</th>
+                    <th>รายการ</th>
+                    <th>ยอดรวม</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>03 ส.ค. 2025</td>
+                    <td>Robux 800 (x1)</td>
+                    <td>250 บาท</td>
+                    <td><span class="status-badge status-complete">สำเร็จ</span></td>
+                </tr>
+                <tr>
+                    <td>25 ก.ค. 2025</td>
+                    <td>ไอเท็มพิเศษ (x1)</td>
+                    <td>150 บาท</td>
+                    <td><span class="status-badge status-complete">สำเร็จ</span></td>
+                </tr>
+                <tr>
+                    <td>20 ก.ค. 2025</td>
+                    <td>Robux 1700 (x2)</td>
+                    <td>1,000 บาท</td>
+                    <td><span class="status-badge status-pending">รอชำระเงิน</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ME SHOP. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ของฉัน | ME SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* โค้ด CSS สำหรับหน้าโปรไฟล์ */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #1a1a1a;
+            --text-color: #fff;
+            --card-bg: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .account-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .account-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin-right: 20px;
+        }
+
+        .profile-info-text {
+            text-align: left;
+        }
+
+        .profile-info-text h2 {
+            margin: 0;
+            font-size: 2em;
+            color: var(--primary-color);
+        }
+        
+        .profile-info-text p {
+            margin: 5px 0 0;
+            font-size: 1em;
+            color: #ccc;
+        }
+        
+        .section-header {
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        
+        .history-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .history-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary-color);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-item .item-details {
+            text-align: left;
+        }
+        
+        .history-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .history-item p {
+            margin: 5px 0 0;
+            color: #aaa;
+        }
+
+        .edit-btn {
+            background-color: #333;
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .edit-btn:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ME SHOP</div>
+        <div class="nav-links">
+            <a href="home.html">หน้าหลัก</a>
+            <a href="products.html">สินค้า</a>
+            <a href="account.html">โปรไฟล์</a>
+            <a href="login.html">ออกจากระบบ</a>
+                        <a href="cart.html">ตะกร้าสินค้า</a>
+                        <a href="history.html">ประวัติการซื้อ</a>
+        </div>
+    </nav>
+
+    <div class="account-container">
+        <h1>โปรไฟล์ของฉัน</h1>
+        <div class="profile-info">
+            <img src="https://via.placeholder.com/100" alt="รูปโปรไฟล์">
+            <div class="profile-info-text">
+                <h2>ชื่อผู้ใช้</h2>
+                <p>อีเมล: user@email.com</p>
+            </div>
+            <button class="edit-btn">แก้ไขข้อมูล</button>
+        </div>
+        
+        <h2 class="section-header">ประวัติการซื้อ</h2>
+        <ul class="history-list">
+            <li class="history-item">
+                <div class="item-details">
+                    <h3>Robux 800</h3>
+                    <p>วันที่: 03 สิงหาคม 2025</p>
+                </div>
+                <p>ราคา: 250 บาท</p>
+            </li>
+            <li class="history-item">
+                <div class="item-details">
+                    <h3>ไอเท็มพิเศษ</h3>
+                    <p>วันที่: 25 กรกฎาคม 2025</p>
+                </div>
+                <p>ราคา: 150 บาท</p>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ME SHOP. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าหลัก | ME SHOP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* โค้ด CSS สำหรับหน้าหลัก */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #1a1a1a;
+            --text-color: #fff;
+            --card-bg: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .navbar .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* สไตล์สำหรับ Carousel Banner */
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .carousel-slider {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+        
+        .carousel-slider img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5em;
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* โค้ดที่เหลือเหมือนเดิม */
+        .hero-banner {
+            background-image: url('URL_ของรูปภาพพื้นหลังของคุณ.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        .hero-content h1 {
+            font-size: 4em;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .product-section {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .product-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .product-card .buy-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-card .buy-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ME SHOP</div>
+        <div class="nav-links">
+            <a href="#">หน้าหลัก</a>
+                        <a href="account.html">โปรไฟล์</a>
+            <a href="products.html">สินค้า</a>
+            <a href="history.html">ประวัติการซื้อ</a>
+            <a href="login.html">ออกจากระบบ</a>
+                        <a href="cart.html">ตะกร้าสินค้า</a>
+        </div>
+    </nav>
+    
+    <div class="carousel-container">
+        <div class="carousel-slider">
+            <img src="https://i.postimg.cc/4NzhWKgG/20250802-124836.jpg" alt="แบนเนอร์ประกาศ 1">
+            <img src="https://i.postimg.cc/4NzhWKgG/20250802-124836.jpg" alt="แบนเนอร์ประกาศ 2">
+            <img src="https://i.postimg.cc/4NzhWKgG/20250802-124836.jpg" alt="แบนเนอร์ประกาศ 3">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <header class="hero-banner">
+        <div class="hero-content">
+            <h1>Robux & ไอเท็มสุดพิเศษ</h1>
+            <p>ซื้อรหัสเกมอย่างปลอดภัยและรวดเร็ว</p>
+        </div>
+    </header>
+
+    <main class="product-section">
+        <h2>สินค้าแนะนำ</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Robux 800">
+                <h3>Robux 800</h3>
+                <p class="price">ราคา: 250 บาท</p>
+                <button class="buy-btn">ซื้อเลย</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Robux 1700">
+                <h3>Robux 1700</h3>
+                <p class="price">ราคา: 500 บาท</p>
+                <button class="buy-btn">ซื้อเลย</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Item พิเศษ">
+                <h3>ไอเท็มพิเศษ</h3>
+                <p class="price">ราคา: 150 บาท</p>
+                <button class="buy-btn">ซื้อเลย</button>
+            </div>
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ME SHOP. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        const slider = document.querySelector('.carousel-slider');
+        const slides = document.querySelectorAll('.carousel-slider img');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        let currentSlide = 0;
+
+        function updateSlider() {
+            const newTransform = -currentSlide * 100;
+            slider.style.transform = `translateX(${newTransform}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+
+        // เลื่อนอัตโนมัติทุก 3 วินาที
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 3000);
+    </script>
+</body>
+</html>
